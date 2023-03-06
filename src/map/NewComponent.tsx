@@ -62,12 +62,4 @@ type AutoPropsType = {
 /*
 
 
-
-
-
-
-
-
-
-
 export default NewComponent;*/

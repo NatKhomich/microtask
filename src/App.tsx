@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import Button from "./button/Button";
+
 /*import NewComponent from "./map/NewComponent";*/
 
 function App() {
@@ -26,11 +28,24 @@ function App() {
             <NewComponent topCars={topCars}/>
         </div>
     );*/
-    return(
+
+    const Button1Foo = (subscriber:string, age:number) => {
+        console.log(subscriber,age)
+    }
+    const Button2Foo = (subscriber:string) => {
+        console.log(subscriber)
+    }
+    const Button3Foo = () => {
+        console.log('Im Stupid Button')
+    }
+
+    return (
         <div className='App'>
-            <button></button>
+            <Button name={'MyYouTubeChanel - 1'} callBack={()=> Button1Foo('Im Vasya', 21)}/>
+            <Button name={'MyYouTubeChanel - 2'} callBack={()=>Button2Foo('Im Alex')}/>
+            <Button name={'Stupid Button'} callBack={Button3Foo}/>
         </div>
-    )
+            );
 }
 
 export default App;
