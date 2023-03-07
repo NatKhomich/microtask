@@ -10,7 +10,7 @@ const Button = (props: ButtonPropsType) => {
         props.callBack() //кнопка обрабатывает нажатие
     }
     return (
-        <div>
+        <div style={{marginTop: '30px'}}>
             <button onClick={onClickHandler}> {props.name} </button>
         </div>
     );

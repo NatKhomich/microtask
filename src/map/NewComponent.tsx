@@ -4,12 +4,10 @@ import s from './NewComponent.module.css'
 /*type NewComponentPropsType = {
     students: StudentPropsType[]
 }
-
 type StudentPropsType = {
     id: number
     name: string
     age: number
-}*/ //map
 /*
 const NewComponent = (props: NewComponentPropsType) => {
     return (
@@ -28,38 +26,53 @@ const NewComponent = (props: NewComponentPropsType) => {
     );
 };*/
 
-/*type TopCarsPropsType = {
+type TopCarsPropsType = {
     topCars: Array<AutoPropsType>
 }
 
 type AutoPropsType = {
     manufacturer: string
     model: string
-}*/ //map
+}
 
-/*const NewComponent = (props: TopCarsPropsType) => { //map
+const NewComponent = (props: TopCarsPropsType) => {
+    /*const students = [ //map
+        {id: 1, name: "James", age: 8},
+        {id: 3, name: "John", age: 28},
+        {id: 4, name: "Michael", age: 38},
+        {id: 5, name: "William", age: 48},
+        {id: 6, name: "David", age: 58},
+        {id: 7, name: "Richard", age: 68},
+        {id: 8, name: "Joseph", age: 78},
+        {id: 9, name: "Thomas", age: 88},
+        {id: 10, name: "Charles", age: 98},
+        {id: 11, name: "Christopher", age: 100},
+    ]*/
+
     return (
         <div>
             {props.topCars.map((carElements, index) => {
                 return (
-                    <table className={s.table}>
-                        <th>
-                            <td key={index}>
-                              Производитель {carElements.manufacturer}
-                            </td>
-                        </th>
-                        <tr>
-                            <td key={index}>
-                                 Модель {carElements.model}
-                            </td>
-                        </tr>
+                    <table key={index} className={s.table}>
+                        <thead>
+                            <tr>
+                                <td key={index}>
+                                    Производитель {carElements.manufacturer}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td key={index}>
+                                    Модель {carElements.model}
+                                </td>
+                            </tr>
+                        </thead>
                     </table>
                 )
             })}
         </div>
     );
-};*/
-/*
+};
 
 
-export default NewComponent;*/
+
+export default NewComponent;
