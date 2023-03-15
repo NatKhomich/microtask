@@ -4,7 +4,7 @@ import Filter from './filter/Filter';
 import NewComponent from "./map/NewComponent";
 import UseState from './useState/UseState';
 import Button from './button/Button';
-
+import Input from './input/Input';
 
 
 function App() {
@@ -19,12 +19,35 @@ function App() {
         console.log(subscriber)
     }
 
+    let [message, setMessage] = useState([
+            {message: 'message1'},
+            {message: 'message2'},
+            {message: 'message3'},
+        ])
+
     return (
         <>
             <NewComponent topCars={topCars}/>
             <Button name={'Кнопка'} callBack={()=>Button1('Im Natalia')} />
             <UseState />
             <Filter />
+            <Input />
+
+            <div>
+
+                {/*<div>
+                    <input />
+                    <button> + </button>
+                </div>*/}
+
+
+                {message.map( (el, index) => {
+                    return (
+                        <div key={index}> {el.message} </div>
+                    )
+                } )}
+            </div>
+
         </>
     )
 }
