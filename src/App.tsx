@@ -1,21 +1,16 @@
 import React, {useState} from 'react';
 import './App.css';
-import Filter from './filter/Filter';
-import NewComponent from './map/NewComponent';
 import UseState from './useState/UseState';
 import Button from './button/Button';
-import {FullInput} from './input/fullinput/FullInput';
 import {Input} from './input/Input';
 import {ButtonInput} from './input/Button';
+import Map from './map/Map';
+import {Filter} from './filter/Filter';
 
 
 function App() {
 
-    const topCars = [ //map
-        {manufacturer: 'BMW', model: 'm5cs'},
-        {manufacturer: 'Mercedes', model: 'e63s'},
-        {manufacturer: 'Audi', model: 'rs6'}
-    ]
+
     const Button1 = (subscriber: string) => {
         console.log(subscriber)
     }
@@ -41,10 +36,13 @@ function App() {
 
     return (
         <>
-            <NewComponent topCars={topCars}/>
+            <Map />
+
+            <Filter />
+
             <Button name={'Кнопка'} callBack={() => Button1('Im Natalia')}/>
             <UseState/>
-            <Filter/>
+
             {/*<FullInput addMessage={addMessage}/>*/}
             <Input  setTitle = {setTitle} title = {title}/>
             <ButtonInput name={ '+' } callBack={ callBackButtonHandler }/>

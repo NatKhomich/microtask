@@ -1,33 +1,15 @@
 import React from 'react';
 import s from './NewComponent.module.css'
 
-/*type NewComponentPropsType = {
-    students: StudentPropsType[]
+type TopCarsPropsType = {
+    topCars: AutoPropsType[]
+    students: StudentsPropsType[]
 }
-type StudentPropsType = {
+
+type StudentsPropsType = {
     id: number
     name: string
     age: number
-/*
-const NewComponent = (props: NewComponentPropsType) => {
-    return (
-        <div>
-            <ul>
-                {props.students.map((objectFromStudentArray, index) => {
-                    return (
-                        <li key={objectFromStudentArray.id}>
-                            <span> {objectFromStudentArray.name} </span>
-                            <span> {objectFromStudentArray.age} </span>
-                        </li>
-                    )
-                })}
-            </ul>
-        </div>
-    );
-};*/
-
-type TopCarsPropsType = {
-    topCars: Array<AutoPropsType>
 }
 
 type AutoPropsType = {
@@ -36,35 +18,37 @@ type AutoPropsType = {
 }
 
 const NewComponent = (props: TopCarsPropsType) => {
-    /*const students = [ //map
-        {id: 1, name: "James", age: 8},
-        {id: 3, name: "John", age: 28},
-        {id: 4, name: "Michael", age: 38},
-        {id: 5, name: "William", age: 48},
-        {id: 6, name: "David", age: 58},
-        {id: 7, name: "Richard", age: 68},
-        {id: 8, name: "Joseph", age: 78},
-        {id: 9, name: "Thomas", age: 88},
-        {id: 10, name: "Charles", age: 98},
-        {id: 11, name: "Christopher", age: 100},
-    ]*/
 
     return (
         <div>
+            <div>
+                <ul>
+                    {props.students.map( el => {
+                        return (
+                            <li key={el.id}>
+                                <span> {el.id} </span>
+                                <span> {el.name} </span>
+                                <span> {el.age} age </span>
+                            </li>
+                        )
+                    } )}
+                </ul>
+            </div>
+
             {props.topCars.map((carElements, index) => {
                 return (
                     <table key={index} className={s.table}>
                         <thead>
-                            <tr>
-                                <td key={index}>
-                                    Производитель {carElements.manufacturer}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td key={index}>
-                                    Модель {carElements.model}
-                                </td>
-                            </tr>
+                        <tr>
+                            <td key={index}>
+                                Производитель {carElements.manufacturer}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td key={index}>
+                                Модель {carElements.model}
+                            </td>
+                        </tr>
                         </thead>
                     </table>
                 )
@@ -72,7 +56,6 @@ const NewComponent = (props: TopCarsPropsType) => {
         </div>
     );
 };
-
 
 
 export default NewComponent;
