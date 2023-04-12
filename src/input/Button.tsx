@@ -5,7 +5,7 @@ type ButtonInputType = {
     callBack: () => void
 }
 
-export const ButtonInput = (props: ButtonInputType) => {
+export const Button = (props: ButtonInputType) => {
 
     const onClickButtonHandler = () => {
         props.callBack()

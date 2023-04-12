@@ -1,20 +1,20 @@
 import React, {useState} from 'react';
 
 const UseState = () => {
-    //let a = 1
+
     let [a, SetA] = useState(0)
 
-    const onClickHandle = () => {
-        SetA(++a)
+    const onClickHandler = () => {
+        SetA(num => num + 1)
     }
-    const onClickDelete = () => {
-        SetA(a-a)
+    const onClickDeleteHandler = () => {
+        SetA(0)
     }
     return (
         <div>
             <h1> {a} </h1>
-            <button onClick={onClickHandle}> number</button>
-            <button onClick={onClickDelete}> delete</button>
+            <button onClick={onClickHandler}> number</button>
+            <button onClick={onClickDeleteHandler}> delete</button>
         </div>
     );
 };
