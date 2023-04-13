@@ -21,7 +21,6 @@ const NewComponent = (props: TopCarsPropsType) => {
 
     return (
         <div>
-            <div>
                 <ul>
                     {props.students.map( el => {
                         return (
@@ -33,7 +32,6 @@ const NewComponent = (props: TopCarsPropsType) => {
                         )
                     } )}
                 </ul>
-            </div>
 
             {props.topCars.map((carElements, index) => {
                 return (

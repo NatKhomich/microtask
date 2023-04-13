@@ -4,7 +4,6 @@ import s from './Input.module.css'
 type InputType = {
     setTitle: (title: string) => void
     title: string
-
 }
 
 export const Input = (props: InputType) => {

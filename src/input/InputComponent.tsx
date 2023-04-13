@@ -23,7 +23,6 @@ const InputComponent = () => {
         setTitle('')
     }
 
-
     return (
         <div>
             <Input setTitle={setTitle} title={title} />
